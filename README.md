@@ -20,7 +20,7 @@
 
 
 ### Non-Functional / Acceptance Criteria ###
-* We urge that you employ a web app framework such as Backbone.js, AngularJS, Ember.js, Knockout.js, React, Meteor.
+* You must employ Backbone.js framework.
 * You must leverage reusability with the existing code. You might have to refactor some of it, specially when you are adopting a web framework. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
@@ -50,10 +50,6 @@ You should receive a JSON response from http://ip-api.com/json/:host similar to:
 Here are a few suggestions of tools to develop your responsive app:
 
 * Backbone.js - http://backbonejs.org/
-* AngularJS - http://angularjs.org/
-* KnockoutJS - http://knockoutjs.com/
-* Ember.js - http://emberjs.com/
-* React - http://facebook.github.io/react/
 * Meteor - https://www.meteor.com/
 * JQuery - http://jquery.com/
 * Twitter Bootstrap - https://twitter.github.com/bootstrap/
