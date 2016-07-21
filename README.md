@@ -8,6 +8,9 @@
 * GeoLocation is a working web application which aims to retrieve details about the user's location. 
 * You need to augment GeoLocation with a new form that will allow the user to find out the physical location of websites, by displaying its hosting position on a map. 
 * This new form will consist in a text field for the user to input the website domain, and also a "Locate" button.
+* You should store the visited website domain and it should be accessed in separate route /locations 
+* There will be one more route /location:id which shows the details of the location along with the map.
+* Single page application is preferable.
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
