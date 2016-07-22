@@ -17,7 +17,7 @@
 * The new form input field should only accept website domains starting with "www."  or with the host name, e.g., "www.nytimes.com", "nytimes.com" or "g1.com.br" or "www.g1.com.br".
 * When the user hits the Locate button, an asynchronous call should be made to http://ip-api.com/json/:host, where :host corresponds to the user input.
 * If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response and also location should be stored locally .
-* 
+* Separate Page/route to show the list of Locations already searched. Each location of the list should be link which should render new route to show all the details of the location.
 * When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
 * When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed if any) and the history of locations should be cleared.
 
