@@ -27,6 +27,7 @@
 ### Non-Functional / Acceptance Criteria ###
 * You must employ Backbone.js framework.
 * You must leverage reusability with the existing code. You might have to refactor some of it to backbone. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
+* It is expected that you use a template engine, such as Handlebars or Underscore.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
 
