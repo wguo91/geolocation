@@ -10,7 +10,7 @@
 * This new form will consist in a text field for the user to input the website domain, and also a "Locate" button.
 * You should store the visited website domain and it should be accessed in separate route /locations 
 * There will be one more route /location:id which shows the details of the location along with the map.
-* Single page application is preferable.
+* Single page application is required.
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
@@ -19,8 +19,8 @@
 * If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response and also location should be stored locally .
 * When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
 * When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed if any) and the history of locations should be cleared.
+* When the user hits the browser's back or forward buttons, it should navigate between the pages/routes. Backbone Router can be used for that.
 *  There should be a separate Page/route to show the list of Locations(already searched). Each location of the list should be a link on clicking the link should render new route to show all the details of the location.
-
 * You need to add consistent user input and output validations for every possible scenario.
 
 
