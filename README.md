@@ -8,9 +8,11 @@
 * GeoLocation is a working web application which aims to retrieve details about the user's location. 
 * You need to augment GeoLocation with a new form that will allow the user to find out the physical location of websites, by displaying its hosting position on a map. 
 * This new form will consist in a text field for the user to input the website domain, and also a "Locate" button.
-* You should store the visited website domain and it should be accessed in separate route /locations 
-* There will be one more route /location:id which shows the details of the location along with the map.
 * Single page application is required.
+* There should be three Pages
+    * Home page with input box to find the domain location and showing map for the domain.
+    * Shows history of located websites (Each time when user locate a website it should be stored locally).
+    * Shows detail of a website from the history list (As shown in home page without input box).
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
@@ -26,7 +28,7 @@
 
 ### Non-Functional / Acceptance Criteria ###
 * You must employ Backbone.js framework.
-* You must leverage reusability with the existing code. You might have to refactor some of it to backbone. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
+* You have to refactor the existing code to backbone. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
 * It is expected that you use a template engine, such as Handlebars or Underscore.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
