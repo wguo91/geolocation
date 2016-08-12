@@ -75,7 +75,7 @@ Here are a few suggestions of tools to develop your responsive app:
 ### Delivery Instructions ###
 
 1. You must provide your BitBucket username. A free BitBucket account can be created at http://bitbucket.org
-1. The recruiter will give you read permission to a repository named **ui-challenge**, at https://bitbucket.org/ac-recruitment/ui-challenge
+1. The recruiter will give you read permission to a repository named **ui-challenge**, at https://bitbucket.org/ac-recruitment/ui-challenge-macys
 1. You must fork this repository into a private repository on your own account and push your code in there.
 1. Once finished, you must give the user **ac-recruitment** read permission on your repository so that you can be evaluated. Then, please contact your recruiter to schedule your evaluation.
 1. After you are evaluated, the recruiter will remove your read permission from the original repository.
