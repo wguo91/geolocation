@@ -7,29 +7,29 @@
 ### Business Narrative / Scenario ###
 * GeoLocation is a working web application which aims to retrieve details about the user's location. 
 * You need to augment GeoLocation with a new form that will allow the user to find out the physical location of websites, by displaying its hosting position on a map. 
-* This new form will consist in a text field for the user to input the website domain, and also a "Locate" button.
+* This new form will consist of a text field for the user to input the website domain.  It will also need a "Locate" button.
 * Single page application is required.
-* There should be three Pages
-    * Home page with input box to find the domain location and showing map for the domain.
-    * Shows history of located websites (Each time when user locate a website it should be stored locally).
-    * Shows detail of a website from the history list (As shown in home page without input box).
+* This application will require three routes or sections:
+    * Home page with input box for the domain and a map which pinpoints the domain's location.
+    * History of located websites. (Each time a user locates a website, it should be stored locally.)
+    * Detail of a website from the history list (as shown in home page without input box).
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
 * The new form input field should only accept website domains starting with "www."  or with the host name, e.g., "www.nytimes.com", "nytimes.com" or "g1.com.br" or "www.g1.com.br".
 * When the user hits the Locate button, an asynchronous call should be made to http://ip-api.com/json/:host, where :host corresponds to the user input.
-* If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response and also location should be stored locally .
+* If this async call is successful, a second panel must be rendered, below the form, displaying a map showing the website's physical location from the latitude and longitude coordinates of the JSON response.  This location should be stored locally.
 * When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
-* When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed if any) and the history of locations should be cleared.
+* When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed, if any) and the history of locations should be cleared.
 * When the user hits the browser's back or forward buttons, it should navigate between the pages/routes. Backbone Router can be used for that.
-*  There should be a separate Page/route to show the list of Locations(already searched). Each location of the list should be a link on clicking the link should render new route to show all the details of the location.
-* You need to add consistent user input and output validations for every possible scenario.
+* There should be a separate page/route/section to show the list of locations previously searched. Each location of the list should be a link which should render new route to show all the details of the location.
+* You should handle user input and server response validations for all scenarios.
 
 
 ### Non-Functional / Acceptance Criteria ###
-* You must employ Backbone.js framework.
-* You have to refactor the existing code to backbone. Make sure to keep the existing functionality up and also to fix any bugs you might run into.
-* It is expected that you use a template engine, such as Handlebars or Underscore.
+* You must refactor this project using the Backbone.js framework.
+* Make sure to keep the existing functionality up and fix any bugs you might run into.
+* It is expected that you use a template engine, such as Handlebars.
 * It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
 * We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
 
@@ -74,12 +74,12 @@ Here are a few suggestions of tools to develop your responsive app:
 
 ### Delivery Instructions ###
 
-1. You must provide his BitBucket username. A free BitBucket account can be created at http://bitbucket.org
+1. You must provide your BitBucket username. A free BitBucket account can be created at http://bitbucket.org
 1. The recruiter will give you read permission to a repository named **ui-challenge**, at https://bitbucket.org/ac-recruitment/ui-challenge
 1. You must fork this repository into a private repository on your own account and push your code in there.
-1. Once finished, you must give the user **ac-recruitment** read permission on your repository so that you can be evaluated. Then, please contact back your recruiter and he will get an engineer to evaluate your test.
+1. Once finished, you must give the user **ac-recruitment** read permission on your repository so that you can be evaluated. Then, please contact your recruiter to schedule your evaluation.
 1. After you are evaluated, the recruiter will remove your read permission from the original repository.
-1. Its very important that these steps are followed accordingly, as your git and overall version control skill will also be evaluated.
+1. Its very important that these steps are followed accordingly, as your git and overall version control skills will also be evaluated.
 
 ### Format ###
 
@@ -100,4 +100,4 @@ Here are a few suggestions of tools to develop your responsive app:
 1. Frameworks usage.
 1. Test coverage.
 
-We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), may also add or subtract points from the candidate.
+We have both functional and non-functional acceptance criterias, so we suggest that you pay attention to both. Furthermore, the quality of the application (number of bugs found), will factor into the evaluation.
