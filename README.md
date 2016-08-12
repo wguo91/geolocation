@@ -12,7 +12,7 @@
 * This application will require three routes or sections:
     * Home page with input box for the domain and a map which pinpoints the domain's location.
     * History of located websites. (Each time a user locates a website, it should be stored locally.)
-    * Detail of a website from the history list (as shown in home page without input box).
+    * Detail of a website from the history list (as shown in home page without an input box).
 * You have to keep the current features working.
 
 ### Functional / Acceptance Criteria ###
