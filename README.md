@@ -8,8 +8,8 @@
 * GeoLocation is a working web application which aims to retrieve details about the user's location. 
 * You need to augment GeoLocation with a new form that will allow the user to find out the physical location of websites, by displaying its hosting position on a map. 
 * This new form will consist of a text field for the user to input the website domain.  It will also need a "Locate" button.
-* Single page application is required.
-* This application will require three routes or sections:
+* It's required that GeoLocation is kept as a **Single page application (SPA)**.
+* This SPA will require three routes or sections:
     * Home page with input box for the domain and a map which pinpoints the domain's location.
     * History of located websites. (Each time a user locates a website, it should be stored locally.)
     * Detail of a website from the history list (as shown in home page without an input box).
@@ -22,7 +22,7 @@
 * When the user hits the existing My location button, his position must also be displayed on the map, **alone or besides a website location** if the user used that feature before.
 * When the user hits the Reset location button, the user location must be cleared off from the map (but the website's location should still be displayed, if any) and the history of locations should be cleared.
 * When the user hits the browser's back or forward buttons, it should navigate between the pages/routes. Backbone Router can be used for that.
-* There should be a separate page/route/section to show the list of locations previously searched. Each location of the list should be a link which should render new route to show all the details of the location.
+* There should be a separate route/section to show the list of locations previously searched. Each location of the list should be a link which should render new route to show all the details of the location.
 * You should handle user input and server response validations for all scenarios.
 
 
@@ -30,8 +30,8 @@
 * You must refactor this project using the Backbone.js framework.
 * Make sure to keep the existing functionality up and fix any bugs you might run into.
 * It is expected that you use a template engine, such as Handlebars.
-* It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Chai, Mocha, QUnit.
-* We also recommend that you use a presentation framework such as Twitter Bootstrap or Zurb Foundation.
+* It is expected that you cover at least 80%+ of your code with JS testing. You can pick a framework of your preference like Jasmine, Mocha/Chai, QUnit.
+* We suggest that you use a responsive presentation framework such as Twitter Bootstrap or Zurb Foundation.
 
 ### Technical Details ###
 You should receive a JSON response from http://ip-api.com/json/:host similar to:
@@ -58,7 +58,6 @@ You should receive a JSON response from http://ip-api.com/json/:host similar to:
 Here are a few suggestions of tools to develop your responsive app:
 
 * Backbone.js - http://backbonejs.org/
-* Meteor - https://www.meteor.com/
 * JQuery - http://jquery.com/
 * Twitter Bootstrap - https://twitter.github.com/bootstrap/
 * Zurb Foundation - http://foundation.zurb.com/
@@ -66,8 +65,8 @@ Here are a few suggestions of tools to develop your responsive app:
 * Underscore - http://underscorejs.org/
 * Handlebars - http://handlebarsjs.com/
 * Jasmine - http://jasmine.github.io/
-* Chai - http://chaijs.com/
 * Mocha - http://visionmedia.github.io/mocha/
+* Chai - http://chaijs.com/
 * QUnit - http://qunitjs.com/
 * SASS - http://sass-lang.com/
 * LESS - http://lesscss.org/
