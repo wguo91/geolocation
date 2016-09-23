@@ -34,7 +34,7 @@
 * Your coding skills will be evaluated, so apply everything you see fit, even with this being a simple app. Bonus points for: organized code, configuration files/objects, design patterns.
 * Task automation (grunt, gulp, and so on) is a nice addition to your challenge.
 * It is expected that you know how to properly commit changes in Git, which means you should present meaningful commits with descriptive commit messages.
-* Well organized projects have descriptive Readme files. Therefore you should provide as much as you can any useful information such as fundamental decisions taken, the project setup steps, how to execute the unit tests, and any further call outs of any kind.
+* Well organized projects have descriptive Readme files. Therefore you should provide as much as you can every useful information such as fundamental decisions taken, the project setup steps, how to execute the unit tests, and any further call outs of any kind.
 
 ### Technical Details ###
 You should receive a JSON response from http://ip-api.com/json/:host similar to:
