@@ -30,7 +30,15 @@ table.empty .help {
     visibility: hidden;
 }
 
-/* my styles */
+/* custom styles */
 #hostLocation {
 	padding: 1em;
+}
+#googleMapContainer {
+	margin: 1em 0;
+}
+#map {
+	margin: 0 auto;
+	width: 800px;
+	height: 500px;;
 }
