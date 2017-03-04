@@ -26,6 +26,16 @@ function getMyLocation() {
 	});
 }
 
+function getHostLocation() {
+	var hostName = $("#inputHost").val();
+	$.ajax({
+		type: 'GET',
+		url: 'http://ip-api.com/json/' + hostName,
+		success: function(response) {
+			updateLocationDetails(response);
+		}
+	});
+}
 function resetLocationDetails() {
 	updateLocationDetails({
 		query: "0.0.0.0",
