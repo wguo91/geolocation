@@ -4,6 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+		<!-- PT Sans font -->
+		<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,700" rel="stylesheet">
 
 		<script src="js/libs/jquery-1.10.2.min.js"></script>
 		<script src="js/libs/handlebars-v1.3.0.js"></script>
@@ -16,66 +18,66 @@
 	<body class="container">
 		<h1 id="title">GeoLocation Test</h1>
 		<hr class="divider"></hr>
-		<section id="mainContent"></section>
+		<section id="mainContent" class="col-xs-12 col-sm-12 col-md-12"></section>
 
 		<script type="text/x-handlebars" id="index">
-			<section id="geoLocationContainer" class="">
+			<section id="geoLocationContainer" class="col-xs-12 col-sm-12 col-md-8">
 			</section>
-			<menu>
-				<button class="btn" id="btnMyLocation">My location</button>
-				<button class="btn" id="btnResetLocation">Reset location</button>
+			<menu class="col-xs-12 col-sm-12 col-md-4">
+				<h2>Input Form</h2>
+				<button class="btn btn-default" id="btnMyLocation">My location</button>
+				<button class="btn btn-default" id="btnResetLocation">Reset location</button>
 				<div id="hostLocation">
 					<!-- NOTE: validation for form fields -->
-					<input type="text" class="form-text" id="inputHost">
-					<button class="btn" id="btnHostLocation">Locate</button>
+					<input type="text" class="form-text" id="inputHost" placeholder="Domain Name">
+					<button class="btn btn-default" id="btnHostLocation">Locate</button>
 				</div>
 			</menu>
-			<section id="googleMapContainer">
+			<section id="googleMapContainer" class="col-xs-12">
 			</section>
 		</script>
 		<script type="text/x-handlebars" id="googleMap">
-			<h4>Domain location for {{domain}}</h4>
+			<h2>Domain location for {{domain}}</h2>
 			<div id="map"></div>
 		</script>
 		<script type="text/x-handlebars" id="locationInfo">
-			<h4>Estimated location</h4>
-
-			<table align="center" class="empty">
+			<h2>Estimated location</h2>
+			<table align="center" class="empty col-xs-12">
 				<tbody>
 					<tr>
-						<td class="field_name">IP</td>
-						<td id="location_query" class="location_value">{{query}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">IP</td>
+						<td id="location_query" class="location_value col-xs-7">{{query}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">Country</td>
-						<td id="location_country" class="location_value">{{country}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">Country</td>
+						<td id="location_country" class="location_value col-xs-7">{{country}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">Region</td>
-						<td id="location_regionName" class="location_value">{{regionName}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">Region</td>
+						<td id="location_regionName" class="location_value col-xs-7">{{regionName}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">City</td>
-						<td id="location_city" class="location_value">{{city}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">City</td>
+						<td id="location_city" class="location_value col-xs-7">{{city}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">Time Zone</td>
-						<td id="location_timezone" class="location_value">{{timezone}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">Time Zone</td>
+						<td id="location_timezone" class="location_value col-xs-7">{{timezone}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">Latitude</td>
-						<td id="location_lat" class="location_value">{{lat}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">Latitude</td>
+						<td id="location_lat" class="location_value col-xs-7">{{lat}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 					<tr>
-						<td class="field_name">Longitude</td>
-						<td id="location_lon" class="location_value">{{lon}}</td>
-						<td><button class="help">?</button></td>
+						<td class="field_name col-xs-4">Longitude</td>
+						<td id="location_lon" class="location_value col-xs-7">{{lon}}</td>
+						<td class="help col-xs-1"><button class="btn btn-default">?</button></td>
 					</tr>
 				</tbody>
 			</table>
