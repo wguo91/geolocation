@@ -69,3 +69,17 @@ menu input {
 .info-window p {
 	font-size: 1em;
 }
+/*********************
+ * error message styles
+ *********************/
+.error {
+	background-color: #d9534f;
+	border-radius: 0.2em;
+	padding: 1em;
+	font-size: 1.25em;
+	text-align: center;
+	color: white;
+}
+.hidden {
+	display: none;
+}

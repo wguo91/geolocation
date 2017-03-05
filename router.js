@@ -60,14 +60,20 @@ $(function() {
     getHostLocation: function() {
     	var hostName = $("#inputHost").val();
       var self = this;
-    	$.ajax({
-    		type: 'GET',
-    		url: 'http://ip-api.com/json/' + hostName,
-    		success: function(response) {
-    			self.updateLocationDetails(response);
-          self.updateMap(response, hostName);
-        }
-    	});
+      var regex = new RegExp("^(([a-zA-Z0-9]|[a-zA-Z0-9][a-zA-Z0-9\-]*[a-zA-Z0-9])\.)*([A-Za-z0-9]|[A-Za-z0-9][A-Za-z0-9\-]*[A-Za-z0-9])$", "g");
+      if(!hostName.match(regex)) {
+        $(".error").removeClass("hidden");
+      } else {
+        $(".error").addClass("hidden");
+        $.ajax({
+          type: 'GET',
+          url: 'http://ip-api.com/json/' + hostName,
+          success: function(response) {
+            self.updateLocationDetails(response);
+            self.updateMap(response, hostName);
+          }
+        });
+      }
     },
     resetLocationDetails: function() {
     	updateLocationDetails({
@@ -152,7 +158,7 @@ $(function() {
         bounds.extend(markerList[i].getPosition());
       }
       this.map.fitBounds(bounds);
-      // readjust the zoom level 
+      // readjust the zoom level
       google.maps.event.addListenerOnce(this.map, "bounds_changed", function() {
         if(this.getZoom() > 12) this.setZoom(12);
       });
