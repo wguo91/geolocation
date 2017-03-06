@@ -69,6 +69,29 @@ menu input {
 .info-window p {
 	font-size: 1em;
 }
+#hostsContainer ul {
+	padding: 0;
+	list-style-type: none;
+	overflow: scroll;
+	border: 0.1em solid #dedede;
+	border-radius: 0.2em;
+	height: 200px;
+}
+#hostsContainer ul li {
+	border-bottom: 0.1em solid #dedede;
+	padding: 0.5em;
+}
+#hostsContainer ul li:hover {
+	background-color: #9dc3f9;
+	cursor: pointer;
+}
+#hostsContainer ul li h4 {
+	font-weight: bold;
+	margin: 0;
+}
+#hostsContainer ul li p {
+	margin: 0;
+}
 /*********************
  * error message styles
  *********************/
