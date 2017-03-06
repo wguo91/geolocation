@@ -35,7 +35,7 @@ app.views.map = Backbone.View.extend({
   addMarker: function(data) {
     var self = this;
     var title = data.query;
-    var imagePath = "map-marker.png";
+    var imagePath = "/js/views/map-marker.png";
     var latlng = {lat: data.lat, lng: data.lon};
     var bounds = new google.maps.LatLngBounds();
     var contentString = "<div class='info-window'><h4>"+data.query+"</h4><p>"+
