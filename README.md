@@ -57,3 +57,7 @@ application was structuring the models and collections.
 
 I also deployed the application on Heroku:
 http://geolocation-wguo.herokuapp.com/
+
+Please note that the website must be loaded on the browser using HTTP,
+and NOT HTTPS. The reason is because the API calls request a HTTP endpoint 
+(http://ip-api.com/json).
