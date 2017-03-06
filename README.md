@@ -37,7 +37,7 @@ marker will remain.
 
 ## Libraries used
 This application is structured using Backbone.js, which means the application
-has a hard dependency on Underscore and a soft dependency on jQuery. I use  
+has a hard dependency on Underscore and a soft dependency on jQuery. I use
 Grunt.js to minify JS/CSS files and run jshint to run basic code quality tests.
 Twitter Bootstrap is used to provide a 12 column grid structure and basic
 styling in the form of buttons. However, most of the styling seen elsewhere
@@ -54,3 +54,6 @@ develop the application in the two days time I was given. The Backbone routes
 were not implemented, and aside from jshint, I was unable to create tests
 for my code. The most challenging and rewarding part while coding the
 application was structuring the models and collections.
+
+I also deployed the application on Heroku:
+http://geolocation-wguo.herokuapp.com/
