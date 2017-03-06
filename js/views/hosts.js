@@ -47,5 +47,6 @@ app.views.hosts = Backbone.View.extend({
     // display information about the clicked host
     json = app.hosts.models[idx].toJSON();
     app.indexView.updateLocationDetails(json);
+    app.indexView.removeErrorMessage();
   }
 });

@@ -16,12 +16,12 @@ module.exports = function(grunt) {
       },
       build: {
         files: {
-          'app.min.js': ['app.js'],
-          'views/hosts.min.js': ['views/hosts.js'],
-          'views/index.min.js': ['views/index.js'],
-          'views/map.min.js': ['views/map.js'],
-          'models/Host.min.js': ['models/Host.js'],
-          'collections/Hosts.min.js': ['collections/Hosts.js']
+          'js/app.min.js': ['js/app.js'],
+          'js/views/hosts.min.js': ['js/views/hosts.js'],
+          'js/views/index.min.js': ['vjs/iews/index.js'],
+          'js/views/map.min.js': ['js/views/map.js'],
+          'js/models/Host.min.js': ['js/models/Host.js'],
+          'js/collections/Hosts.min.js': ['js/collections/Hosts.js']
         }
       }
     },

@@ -35,7 +35,7 @@ app.views.map = Backbone.View.extend({
   addMarker: function(data) {
     var self = this;
     var title = data.query;
-    var image = "map-marker.png";
+    var imagePath = "map-marker.png";
     var latlng = {lat: data.lat, lng: data.lon};
     var bounds = new google.maps.LatLngBounds();
     var contentString = "<div class='info-window'><h4>"+data.query+"</h4><p>"+
@@ -48,7 +48,7 @@ app.views.map = Backbone.View.extend({
       position: latlng,
       map: this.googleMap,
       title: title,
-      icon: image,
+      icon: imagePath,
       isUserLocation: data.isUserLocation
     });
     marker.addListener("click", function() {

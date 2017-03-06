@@ -42,6 +42,8 @@ app.views.index = Backbone.View.extend({
   },
   getMyLocation: function() {
     var self = this;
+    // remove error message if it exists
+    this.removeErrorMessage();
   	$.ajax({
   		type : 'GET',
   		url : 'http://ip-api.com/json/',
@@ -62,7 +64,7 @@ app.views.index = Backbone.View.extend({
     if(!hostName.match(regex)) {
       $(".error").removeClass("hidden");
     } else {
-      $(".error").addClass("hidden");
+      this.removeErrorMessage();
       $.ajax({
         type: 'GET',
         url: 'http://ip-api.com/json/' + hostName,
@@ -79,6 +81,7 @@ app.views.index = Backbone.View.extend({
   },
   resetLocationDetails: function() {
     // reset the view
+    this.removeErrorMessage();
   	this.updateLocationDetails({
   		query: "0.0.0.0",
   		country: "",
@@ -91,5 +94,11 @@ app.views.index = Backbone.View.extend({
   	$("table").addClass("empty");
     // reset the website collection by removing the user location
     app.hosts.clearHosts();
+  },
+  removeErrorMessage: function() {
+    // remove error message if it exists
+    if(!$(".error").hasClass("hidden")) {
+      $(".error").addClass("hidden");
+    }
   }
 });
