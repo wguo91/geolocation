@@ -1,7 +1,9 @@
 app.views.map = Backbone.View.extend({
+  googleMap: null,
   initialize: function(options) {
     this.render(options);
     this.initMap(options);
+    this.listenTo(app.hosts, "remove", this.resetMarkers);
   },
   render: function(data) {
     window.mapTemplate = $("#googleMap").html();
@@ -24,7 +26,8 @@ app.views.map = Backbone.View.extend({
           zoom: 12,
           center: latlng
         };
-        self.map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        self.googleMap =
+          new google.maps.Map(document.getElementById("map"), mapOptions);
         self.addMarker(data);
       }
     });
@@ -34,29 +37,43 @@ app.views.map = Backbone.View.extend({
     var title = data.query;
     var image = "map-marker.png";
     var latlng = {lat: data.lat, lng: data.lon};
-    var bounds = new google.maps.LatLngBounds();
-    var contentString = "<div class='info-window'><h4>"+data.city+", "+data.regionName+"</h4><p>("+data.lat+ ", "+data.lon+")</p></div>";
+    var contentString = "<div class='info-window'><h4>"+data.city+", "
+      +data.regionName+"</h4><p>("+data.lat+ ", "+data.lon+")</p></div>";
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
     var marker = new google.maps.Marker({
       position: latlng,
-      map: this.map,
+      map: this.googleMap,
       title: title,
-      icon: image
+      icon: image,
+      isUserLocation: data.isUserLocation
     });
     marker.addListener("click", function() {
       infowindow.open(self.map, marker);
     });
-    // readjust the map whenever a new marker is added
     app.markerList.push(marker);
+    var bounds = new google.maps.LatLngBounds();
+    // readjust the map whenever a new marker is added or removed
     for(let i = 0; i < app.markerList.length; i++) {
       bounds.extend(app.markerList[i].getPosition());
     }
-    this.map.fitBounds(bounds);
+    this.googleMap.fitBounds(bounds);
     // readjust the zoom level
-    google.maps.event.addListenerOnce(this.map, "bounds_changed", function() {
+    google.maps.event.addListenerOnce(this.googleMap, "bounds_changed", function() {
       if(this.getZoom() > 12) this.setZoom(12);
     });
+  },
+  resetMarkers: function() {
+    // remove markers depending on the value of isUserLocation
+    var list = [];
+    for(let i = 0; i < app.markerList.length; i++) {
+      if(!app.markerList[i].isUserLocation) list.push(app.markerList[i]);
+      else app.markerList[i].setMap(null);
+    }
+    // readjust the center and zoom level
+    // this.googleMap.setCenter(list[0].getPosition());
+    // this.googleMap.setZoom(12);
+    // app.markerList = list;
   }
 });

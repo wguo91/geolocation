@@ -9,9 +9,6 @@
 
 		<script src="js/libs/jquery-1.10.2.min.js"></script>
 		<script src="js/libs/handlebars-v1.3.0.js"></script>
-		<!--
-		<script src="js/geolocation.js"></script>
-		-->
 		<link rel="stylesheet" href="css/geolocation.css">
 
 	</head>
@@ -44,7 +41,7 @@
 			<ul>
 				{{#if hosts}}
 				{{#each hosts}}
-				<li>
+				<li class="hostList" id="{{attributes.date}}">
 					<div>
 						<h4>{{attributes.query}}</h4>
 						<p>{{attributes.regionName}}, {{attributes.country}}</p>
@@ -112,7 +109,6 @@
 		<script src="collections/Hosts.js"></script>
 		<script src="views/index.js"></script>
 		<script src="views/map.js"></script>
-		<script src="views/host.js"></script>
 		<script src="views/hosts.js"></script>
 	</body>
 </html>

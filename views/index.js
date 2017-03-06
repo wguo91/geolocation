@@ -45,7 +45,8 @@ app.views.index = Backbone.View.extend({
   	$.ajax({
   		type : 'GET',
   		url : 'http://ip-api.com/json/',
-  		success : function(response){
+  		success : function(response) {
+        // used to indicate whether or not to reset this marker
         response.isUserLocation = true;
         // create the map view and update location
         var mapView = app.createMapView(response);
@@ -66,6 +67,8 @@ app.views.index = Backbone.View.extend({
         type: 'GET',
         url: 'http://ip-api.com/json/' + hostName,
         success: function(response) {
+          // used to indicate whether or not to reset this marker
+          response.isUserLocation = false;
           // create the map view, insert host into history, and update location
           var mapView = app.createMapView(response);
           app.hostsView.insertHost(response);
@@ -88,5 +91,6 @@ app.views.index = Backbone.View.extend({
   	$("table").addClass("empty");
     // reset the website collection by removing the user location
     app.hosts.clearHosts();
+
   }
 });

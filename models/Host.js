@@ -9,8 +9,5 @@ app.models.Host = Backbone.Model.extend({
     lat: "",
     lon: "",
     isUserLocation: false
-  },
-  initialize: function() {
-    console.log("created a host in app.models.host!");
   }
 });

@@ -1,16 +1,12 @@
 app.views.hosts = Backbone.View.extend({
-  el: $("#hostsContainer"),
-  hostsArray: [],
+  events: {
+    "click .hostList": "displayInfo"
+  },
   initialize: function() {
     app.hosts.fetch();
-    app.hosts.toJSON();
-    var self = this;
-    // render a new host view every time a host is added or removed
-    this.listenTo(app.hosts, "add", function(host) {
-      console.log("triggered add in hosts.js");
-
-      this.render();
-    });
+    // re-render the hosts collection view every time a host is added or removed
+    this.listenTo(app.hosts, "add", this.render);
+    this.listenTo(app.hosts, "remove", this.render);
     this.render();
   },
   render: function() {
@@ -21,11 +17,7 @@ app.views.hosts = Backbone.View.extend({
       hosts: app.hosts.models
     }));
   },
-  renderHost: function(host) {
-    // var hostView = new app.views.host(host);
-  },
   insertHost: function(response) {
-    console.log(response);
     var newHost = new app.models.Host({
       date: Date.now(),
       query: response.query,
@@ -40,5 +32,19 @@ app.views.hosts = Backbone.View.extend({
     // add newHost to collection
     app.hosts.add(newHost);
     newHost.save();
+  },
+  displayInfo: function(evt) {
+    // find the closest li
+    var li = $(evt.target).closest("li");
+    var ul = li.closest("ul");
+    var idx, json;
+    for(let i = 0; i < ul.children().length; i++) {
+      // save the index of the li
+      if(ul.children().eq(i).attr("id") === li.attr("id"))
+        idx = i;
+    }
+    // display information about the clicked host
+    json = app.hosts.models[idx].toJSON();
+    app.indexView.updateLocationDetails(json);
   }
 });
