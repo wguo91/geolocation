@@ -91,6 +91,5 @@ app.views.index = Backbone.View.extend({
   	$("table").addClass("empty");
     // reset the website collection by removing the user location
     app.hosts.clearHosts();
-
   }
 });

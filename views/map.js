@@ -37,8 +37,9 @@ app.views.map = Backbone.View.extend({
     var title = data.query;
     var image = "map-marker.png";
     var latlng = {lat: data.lat, lng: data.lon};
-    var contentString = "<div class='info-window'><h4>"+data.city+", "
-      +data.regionName+"</h4><p>("+data.lat+ ", "+data.lon+")</p></div>";
+    var contentString = "<div class='info-window'><h4>"+data.query+"</h4><p>"+
+      data.city+", "+data.regionName+"</p><p>("+data.lat+ ", "+
+      data.lon+")</p></div>";
     var infowindow = new google.maps.InfoWindow({
       content: contentString
     });
@@ -71,9 +72,6 @@ app.views.map = Backbone.View.extend({
       if(!app.markerList[i].isUserLocation) list.push(app.markerList[i]);
       else app.markerList[i].setMap(null);
     }
-    // readjust the center and zoom level
-    // this.googleMap.setCenter(list[0].getPosition());
-    // this.googleMap.setZoom(12);
-    // app.markerList = list;
+    app.markerList = list;
   }
 });

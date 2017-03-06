@@ -63,12 +63,16 @@ menu input {
 	width: 100%;
 	height: 500px;;
 }
-.info-window {
-
+.info-window h4 {
+	margin: 0;
 }
 .info-window p {
+	margin: 0;
 	font-size: 1em;
 }
+/*********************
+ * host history styles
+ *********************/
 #hostsContainer ul {
 	padding: 0;
 	list-style-type: none;
