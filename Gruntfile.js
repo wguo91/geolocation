@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         files: {
           'js/app.min.js': ['js/app.js'],
           'js/views/hosts.min.js': ['js/views/hosts.js'],
-          'js/views/index.min.js': ['vjs/iews/index.js'],
+          'js/views/index.min.js': ['js/views/index.js'],
           'js/views/map.min.js': ['js/views/map.js'],
           'js/models/Host.min.js': ['js/models/Host.js'],
           'js/collections/Hosts.min.js': ['js/collections/Hosts.js']
