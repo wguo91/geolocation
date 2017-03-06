@@ -37,6 +37,7 @@ app.views.map = Backbone.View.extend({
     var title = data.query;
     var image = "map-marker.png";
     var latlng = {lat: data.lat, lng: data.lon};
+    var bounds = new google.maps.LatLngBounds();
     var contentString = "<div class='info-window'><h4>"+data.query+"</h4><p>"+
       data.city+", "+data.regionName+"</p><p>("+data.lat+ ", "+
       data.lon+")</p></div>";
@@ -54,9 +55,8 @@ app.views.map = Backbone.View.extend({
       infowindow.open(self.map, marker);
     });
     app.markerList.push(marker);
-    var bounds = new google.maps.LatLngBounds();
     // readjust the map whenever a new marker is added or removed
-    for(let i = 0; i < app.markerList.length; i++) {
+    for(var i = 0; i < app.markerList.length; i++) {
       bounds.extend(app.markerList[i].getPosition());
     }
     this.googleMap.fitBounds(bounds);
@@ -68,7 +68,7 @@ app.views.map = Backbone.View.extend({
   resetMarkers: function() {
     // remove markers depending on the value of isUserLocation
     var list = [];
-    for(let i = 0; i < app.markerList.length; i++) {
+    for(var i = 0; i < app.markerList.length; i++) {
       if(!app.markerList[i].isUserLocation) list.push(app.markerList[i]);
       else app.markerList[i].setMap(null);
     }

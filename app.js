@@ -37,4 +37,4 @@ var app = (function() {
 })();
 window.onload = function() {
   app.init();
-}
+};

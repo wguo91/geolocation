@@ -38,10 +38,11 @@ app.views.hosts = Backbone.View.extend({
     var li = $(evt.target).closest("li");
     var ul = li.closest("ul");
     var idx, json;
-    for(let i = 0; i < ul.children().length; i++) {
+    for(var i = 0; i < ul.children().length; i++) {
       // save the index of the li
-      if(ul.children().eq(i).attr("id") === li.attr("id"))
+      if(ul.children().eq(i).attr("id") === li.attr("id")) {
         idx = i;
+      }
     }
     // display information about the clicked host
     json = app.hosts.models[idx].toJSON();
