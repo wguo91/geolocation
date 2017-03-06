@@ -1,7 +1,7 @@
 ## How to compile and run the application
-This application must be run on a local or remote web server. Clone the
-repository into a local directory and open up index.html on a browser.
-The project can also be run as a NodeJS application by opening the terminal
+This application must be run on a local or remote web server (i.e. Heroku).
+Clone the repository into a local directory and open up index.html on a browser.
+The project is run as a NodeJS application by opening the terminal
 in the application home directory and entering in the command "node server.js",
 without the quotes. The default port is 3000, unless otherwise specified.
 
