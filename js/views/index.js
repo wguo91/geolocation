@@ -1,10 +1,8 @@
 app.views.index = Backbone.View.extend({
-  data: null,
   events: {
     "click #btnMyLocation": "getMyLocation",
     "click #btnResetLocation": "resetLocationDetails",
-    "click #btnHostLocation": "getHostLocation",
-    "click .help": "displayHelp"
+    "click #btnHostLocation": "getHostLocation"
   },
   initialize: function() {
     this.render();
@@ -26,10 +24,6 @@ app.views.index = Backbone.View.extend({
   		lon: ""
   	}));
   },
-  displayHelp: function(e) {
-    var fieldName = $(e.currentTarget).closest('tr').find('.field_name').text();
-    alert("This is your " + fieldName + " from ISP " + this.data.isp + " at " + this.data.date);
-  },
   updateLocationDetails: function(data) {
   	var now = new Date();
   	$("#location_query").html(data.query);
@@ -39,9 +33,12 @@ app.views.index = Backbone.View.extend({
   	$("#location_timezone").html(data.timezone);
   	$("#location_lat").html(data.lat);
   	$("#location_lon").html(data.lon);
+
   	$("table").removeClass("empty");
-    data.date = now;
-    this.data = data;
+  	$(".help").click(function(e){
+  		var fieldName = $(e.currentTarget).closest('tr').find('.field_name').text();
+  		alert("This is your " + fieldName + " from ISP " + data.isp + " at " + now);
+  	});
   },
   getMyLocation: function() {
     var self = this;

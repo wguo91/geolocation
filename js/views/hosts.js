@@ -20,7 +20,6 @@ app.views.hosts = Backbone.View.extend({
   insertHost: function(response) {
     var newHost = new app.models.Host({
       date: Date.now(),
-      isp: response.isp,
       query: response.query,
       country: response.country,
       regionName: response.regionName,

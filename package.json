@@ -9,11 +9,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/wguo91/geolocation.git"
+    "url": "git+https://wguo91@bitbucket.org/wguo91/ui-challenge-macys.git"
   },
   "author": "",
   "license": "ISC",
-  "homepage": "https://github.com/wguo91/geolocation",
+  "homepage": "https://bitbucket.org/wguo91/ui-challenge-macys#readme",
   "dependencies": {
     "express": "^4.14.0",
     "grunt": "^1.0.1",
